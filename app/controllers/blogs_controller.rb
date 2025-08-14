@@ -1,0 +1,19 @@
+class BlogsController < ApplicationController
+  def index
+    @blogs = Blog.all
+  end
+
+  def show
+    @blog = Blog.find_by(params[:id])
+  end
+
+  def new
+    @blog = Blog.new
+  end
+
+  def create
+    @blog = Blog.new(params[:blog])
+    @blog.save
+  end
+
+end
